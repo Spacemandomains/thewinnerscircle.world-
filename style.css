@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width: 600px) {
+    .section h1 {
+        font-size: 1.5rem; /* Adjusted font size for smaller screens */
+    }
+
+    .section p {
+        font-size: 1rem; /* Adjusted font size for smaller screens */
+    }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.made-to-order {
+    width: 100%; /* Full width of the viewport */
+    padding: 16px; /* Padding as needed */
+    margin: 0; /* No margin to ensure alignment with the left edge */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    min-height: 80vh; /* 80% of the viewport height */
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    align-items: flex-start; /* Align items to the start (left) */
+    justify-content: center; /* Center items vertically */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ccc; /* Optional: to distinguish sections */
+}
+
+.section {
+    min-height: 80vh; /* 80% of the viewport height */
+    padding: 16px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Center text */
+    border-bottom: 1px solid #ccc; /* Optional: to distinguish sections */
+}
+
+.image-container {
+    margin-bottom: 16px; /* Space between image and text */
+}
+
+.image-container img {
+    width: 100%; /* Adjust width if necessary */
+    max-width: 280px; /* Ensure the image does not exceed this width */
+}
+
+.text-container {
+    text-align: center; /* Center text inside the container */
+}
+
+.section h1 {
+    margin: 0 0 16px 0; /* Remove default top margin, add bottom margin */
+    font-size: 2.5rem; /* Adjust size as needed */
+}
+
+.section p {
+    font-size: 1.2rem; /* Font size for paragraphs */
+}
+
+.proxima-nova {
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.investor {
+    width: 100%; /* Full width of the viewport */
+    padding: 16px; /* Padding as needed */
+    margin: 0; /* No margin to ensure alignment with the left edge */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    min-height: 80vh; /* 80% of the viewport height */
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    align-items: flex-start; /* Align items to the start (left) */
+    justify-content: center; /* Center items vertically */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ccc; /* Optional: to distinguish sections */
+}
+
+.button-container {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    background-color: #f5f5dc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: Arial, sans-serif;
+    margin-top: 20px; /* Add margin to separate it from text */
+    justify-content: flex-start; /* Align items to the left */
+}
+
+.date {
+    margin-right: 10px; /* Space between the date and the button */
+}
+
+.signup-button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.f1-button-container {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    padding: 10px 0; /* Optional padding around the button */
+}
+
+.f1-polo-button {
+    background-color: #d9534f; /* Matches other buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: auto; /* Ensures the button is only as wide as its content */
+    margin: 0 auto; /* Ensures the button is centered */
+    display: block; /* Ensures the button behaves like a block element */
+}
+
+
