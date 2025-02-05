@@ -70,6 +70,27 @@
         </ul>
 
         <p class="mt-4 text-lg">Got questions? Our support team is always ready to assist. Experience the difference of a truly tailored fit with The Winners Circle Big & Tall Polo Shirt!</p>
+        <div class="fixed bottom-5 right-5">
+            <!-- Chat Toggle Button -->
+            <button id="chat-toggle" class="bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition">
+                💬 Chat with Us
+            </button>
+        
+            <!-- Chat Window (Initially Hidden) -->
+            <div id="chat-box" class="hidden border rounded-lg shadow-lg overflow-hidden w-80 h-[500px] mt-2">
+                <iframe src="https://go.crisp.chat/chat/embed/?website_id=7ae516f6-6c04-4a9f-a0f0-1c0379a2d545" 
+                    width="100%" height="100%" style="border: none;">
+                </iframe>
+            </div>
+        </div>
+        
+        <script>
+            document.getElementById('chat-toggle').addEventListener('click', function() {
+                const chatBox = document.getElementById('chat-box');
+                chatBox.classList.toggle('hidden');
+            });
+        </script>
+        
     </main>
 </body>
 </html>
