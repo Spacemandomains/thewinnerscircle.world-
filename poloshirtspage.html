@@ -26,10 +26,18 @@
     <!-- Tailwind CSS (Consider Self-hosting Instead of CDN) -->
     <script defer src="https://cdn.tailwindcss.com"></script>
 <style>
-    /* Ensure body and html take up full height */
+     /* Ensure body and html take up full height */
     html, body {
         height: 100%;
         margin: 0;
+        padding-left: 20px; /* Add padding to the left of the entire page */
+    }
+
+    /* Main content should take at least the full height of the page */
+    main {
+        min-height: 100vh;
+        padding-left: 20px; /* Add padding to the left of the main content */
+        padding-bottom: 100px; /* Add space for chat button at the bottom */
     }
 
     /* Optimize Image Loading */
@@ -59,7 +67,7 @@
 
     /* Main content should take at least the full height of the page */
     main {
-        min-height: 100vh; /* 100% of the viewport height */
+        min-height: 150vh; /* 100% of the viewport height */
         padding-bottom: 100px; /* Add space for chat button at the bottom */
     }
 </style>
