@@ -25,15 +25,20 @@
 
     <!-- Tailwind CSS (Consider Self-hosting Instead of CDN) -->
     <script defer src="https://cdn.tailwindcss.com"></script>
+<style>
+    /* Ensure body and html take up full height */
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
 
-    <style>
-        /* Optimize Image Loading */
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+    /* Optimize Image Loading */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 
-        #chat-box {
+    #chat-box {
         position: fixed;
         bottom: 20px;
         right: 20px;
@@ -51,7 +56,13 @@
         height: 100%;
         border: none;
     }
-    </style>
+
+    /* Main content should take at least the full height of the page */
+    main {
+        min-height: 100vh; /* 100% of the viewport height */
+        padding-bottom: 100px; /* Add space for chat button at the bottom */
+    }
+</style>
 </head>
 <body class="bg-gray-100">
     <header class="bg-white shadow p-6 flex items-center">
