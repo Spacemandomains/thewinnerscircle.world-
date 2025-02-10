@@ -3,141 +3,607 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Winners Circle Polo Shirts</title>
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Tailored Big & Tall Polo Shirts" />
-    <meta property="og:description" content="The Winners Circle Polo Shirts" />
-    <meta property="og:image" content="https://the-winners-circle-website.vercel.app/BigandTallPoloShirt1.png" />
-    <meta property="og:url" content="https://the-winners-circle-website.vercel.app/poloshirtspage.html" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="The Winners Circle" />
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://the-winners-circle-website.vercel.app/BigandTallPoloShirt1.png" />
-    <meta name="twitter:title" content="Tailored Big & Tall Polo Shirts" />
-    <meta name="twitter:description" content="Tailored Big & Tall Polo Shirts" />
-
-    <!-- Preload Key Resources -->
-    <link rel="preload" as="image" href="https://the-winners-circle-website.vercel.app/BigandTallPoloShirt1.png">
-    <link rel="preload" as="image" href="https://the-winners-circle-website.vercel.app/logo.jpeg">
-
-    <!-- Tailwind CSS (Consider Self-hosting Instead of CDN) -->
-    <script defer src="https://cdn.tailwindcss.com"></script>
-<style>
-     /* Ensure body and html take up full height */
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding-left: 20px; /* Add padding to the left of the entire page */
-    }
-
-    /* Main content should take at least the full height of the page */
-    main {
-        min-height: 100vh;
-        padding-left: 20px; /* Add padding to the left of the main content */
-        padding-bottom: 100px; /* Add space for chat button at the bottom */
-    }
-
-    /* Optimize Image Loading */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    #chat-box {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 350px;
-        height: 500px;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        display: none;  /* Keep it hidden initially */
-        z-index: 1000;
-    }
-
-    #chat-iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
-
-    /* Main content should take at least the full height of the page */
-    main {
-        min-height: 150vh; /* 100% of the viewport height */
-        padding-bottom: 100px; /* Add space for chat button at the bottom */
-    }
-</style>
+    <title>Landing Page</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer src="https://js.stripe.com/v3/buy-button.js"></script>
 </head>
-<body class="bg-gray-100">
-    <header class="bg-white shadow p-6 flex items-center">
-        <img src="https://the-winners-circle-website.vercel.app/logo.jpeg" alt="The Winners Circle Logo" class="h-12 w-auto mr-4" loading="lazy">
-        <h1 class="text-2xl font-bold">Tailored Big & Tall Polo Shirts</h1>
-    </header>
-    
-    <main class="container mx-auto px-6 lg:px-12 max-w-screen-lg py-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <!-- Lazy Load Stripe Scripts -->
-            <script defer src="https://js.stripe.com/v3/buy-button.js"></script>
+<style>
+    /* Reset and Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    height: auto; /* Allows content to extend */
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    overflow-y: auto; /* Ensures scrolling is enabled */
+}
 
-            <stripe-buy-button buy-button-id="buy_btn_1Qp0dRIn52oBHUaH0Lit1JP0" publishable-key="pk_live_51OPRO0In52oBHUaHQYu5fIBTEKUg9s2eQ3mHkzhk7TTqIs1GGshI6X81a6mYwDuOGYXh1Mgz7JN9UxdeeqjX6wgG00YMI3DhGM"></stripe-buy-button>
+/* Container Styles */
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 16px;
+}
 
-            <stripe-buy-button buy-button-id="buy_btn_1Qp0pyIn52oBHUaHlVD1YVaR" publishable-key="pk_live_51OPRO0In52oBHUaHQYu5fIBTEKUg9s2eQ3mHkzhk7TTqIs1GGshI6X81a6mYwDuOGYXh1Mgz7JN9UxdeeqjX6wgG00YMI3DhGM"></stripe-buy-button>
+/* Section Styles */
+.section {
+    min-height: 250vh; /* Increased to 250% of the viewport height */
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid #ccc; /* Optional: to distinguish sections */
+}
 
-            <stripe-buy-button buy-button-id="buy_btn_1Qp0ucIn52oBHUaHPoRgwhW7" publishable-key="pk_live_51OPRO0In52oBHUaHQYu5fIBTEKUg9s2eQ3mHkzhk7TTqIs1GGshI6X81a6mYwDuOGYXh1Mgz7JN9UxdeeqjX6wgG00YMI3DhGM"></stripe-buy-button>
+main {
+    padding-top: 50px; /* Adjust this value as needed */
+    min-height: 100vh; /* Ensure the page is at least one viewport height */
+}
 
-            <stripe-buy-button buy-button-id="buy_btn_1Qp135In52oBHUaHzcpkPK1y" publishable-key="pk_live_51OPRO0In52oBHUaHQYu5fIBTEKUg9s2eQ3mHkzhk7TTqIs1GGshI6X81a6mYwDuOGYXh1Mgz7JN9UxdeeqjX6wgG00YMI3DhGM"></stripe-buy-button>
-        
-            <stripe-buy-button buy-button-id="buy_btn_1P68n0In52oBHUaHXt0Arh0r" publishable-key="pk_live_51OPRO0In52oBHUaHQYu5fIBTEKUg9s2eQ3mHkzhk7TTqIs1GGshI6X81a6mYwDuOGYXh1Mgz7JN9UxdeeqjX6wgG00YMI3DhGM"></stripe-buy-button>
-        
-            <stripe-buy-button buy-button-id="buy_btn_1QqKwgIn52oBHUaHhksMjLim" publishable-key="pk_live_51OPRO0In52oBHUaHQYu5fIBTEKUg9s2eQ3mHkzhk7TTqIs1GGshI6X81a6mYwDuOGYXh1Mgz7JN9UxdeeqjX6wgG00YMI3DhGM"></stripe-buy-button>
-        </div>
+/* Typography */
+.section h1 {
+    font-size: 2rem;
+    margin: 0;
+}
 
-        <p class="mt-8 text-lg">
-            <strong>How Ordering Your Winners Circle Big & Tall Polo Shirt Works</strong><br>
-            At The Winners Circle, we believe every man deserves the perfect fit. That’s why we offer tailored sizing to ensure your polo shirt is crafted to fit you perfectly.
-        </p>
+.section p {
+    font-size: 1.2rem;
+}
 
-        <ul class="mt-4 list-decimal list-inside space-y-2">
-            <li><strong>Place Your Order</strong> - Select your preferred color and proceed with the purchase.</li>
-            <li><strong>Submit Your Measurements</strong> - After checkout, you’ll receive an email with a simple measurement guide.</li>
-            <li><strong>We Tailor Your Polo Shirt</strong> - Our team will craft your custom-fitted Big & Tall polo shirt.</li>
-            <li><strong>Shipping & Delivery</strong> - Your tailored polo shirt will be packed and shipped to your doorstep.</li>
-            <li><strong>Wear It with Confidence</strong> - Enjoy a perfect fit. Need adjustments? We’re here to help!</li>
-        </ul>
+/* Mobile Styles */
+@media (max-width: 600px) {
+    .section h1 {
+        font-size: 1.5rem;
+    }
 
-        <p class="mt-4 text-lg">Got questions? Our support team is always ready to assist!</p>
+    .section p {
+        font-size: 1rem;
+    }
+}
 
-        <!-- Chat Button - Loads Chat Only When Clicked -->
-        <div class="fixed bottom-5 right-5">
-            <button id="chat-toggle" type="button" class="bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition">
-                💬 Chat With Us
-            </button>
-            <div id="chat-box" class="hidden border rounded-lg shadow-lg overflow-hidden w-80 h-[500px] mt-2">
-                <iframe id="chat-iframe" src="https://go.crisp.chat/chat/embed/?website_id=7ae516f6-6c04-4a9f-a0f0-1c0379a2d545"
-                width="100%" height="100%" style="border: none;">
-                </iframe>
+/* Splash Container */
+.splash-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    height: 100vh;
+}
+
+.text-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.text-content h1 {
+    font-size: 48px;
+    color: #2c3e50;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.text-content p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    margin-top: 20px;
+    border: 1px solid #333;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #333;
+}
+
+/* Image Content */
+.image-content {
+    flex: 1;
+    text-align: right;
+}
+
+.image-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Card Container */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Card */
+.card {
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.card-price {
+    color: #28a745;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Crypto Fields */
+.crypto-fields {
+    margin-top: 10px;
+}
+
+.crypto-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+}
+
+/* Chat Box */
+#chat-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+}
+
+#chat-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Scroll to Top Button */
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+}
+
+#scroll-to-top:hover {
+    background-color: #555;
+}
+
+</style>
+<body>
+    <div class="container">
+        <section class="splash">
+            <div class="splash-container">
+                <div class="text-content">
+                    <h1>POLO SHIRTS <br>Cash or Crypto Checkout</h1>
+                    <p>Upgrade your style with our premium Polo Shirt—now available with flexible payment options! Pay securely with your debit card or go digital with crypto. Choose your way to shop and step into the future of fashion. 🚀</p>
+                    <a href="https://www.youtube.com/@VotedMostLikelyto" class="btn">LEARN MORE</a>
+                </div>
+                <div class="image-content">
+                    <img src="https://the-winners-circle-website.vercel.app/black%20full.png" alt="3D Design Polo Shirt Black">
+                </div>
             </div>
-        </div>
+        </section>
+        
+        <section class="products">
+            <main class="container mx-auto px-6 lg:px-12 max-w-screen-lg py-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <stripe-buy-button buy-button-id="buy_btn_1Qp0dRIn52oBHUaH0Lit1JP0" publishable-key="pk_live_51OPRO0In52oBHUaHQYu5fIBTEKUg9s2eQ3mHkzhk7TTqIs1GGshI6X81a6mYwDuOGYXh1Mgz7JN9UxdeeqjX6wgG00YMI3DhGM"></stripe-buy-button>
+                    <stripe-buy-button buy-button-id="buy_btn_1Qp0pyIn52oBHUaHlVD1YVaR" publishable-key="pk_live_51OPRO0In52oBHUaHQYu5fIBTEKUg9s2eQ3mHkzhk7TTqIs1GGshI6X81a6mYwDuOGYXh1Mgz7JN9UxdeeqjX6wgG00YMI3DhGM"></stripe-buy-button>
+                    <stripe-buy-button buy-button-id="buy_btn_1Qp0ucIn52oBHUaHPoRgwhW7" publishable-key="pk_live_51OPRO0In52oBHUaHQYu5fIBTEKUg9s2eQ3mHkzhk7TTqIs1GGshI6X81a6mYwDuOGYXh1Mgz7JN9UxdeeqjX6wgG00YMI3DhGM"></stripe-buy-button>
+                    <stripe-buy-button buy-button-id="buy_btn_1Qp135In52oBHUaHzcpkPK1y" publishable-key="pk_live_51OPRO0In52oBHUaHQYu5fIBTEKUg9s2eQ3mHkzhk7TTqIs1GGshI6X81a6mYwDuOGYXh1Mgz7JN9UxdeeqjX6wgG00YMI3DhGM"></stripe-buy-button>
+                    <stripe-buy-button buy-button-id="buy_btn_1P68n0In52oBHUaHXt0Arh0r" publishable-key="pk_live_51OPRO0In52oBHUaHQYu5fIBTEKUg9s2eQ3mHkzhk7TTqIs1GGshI6X81a6mYwDuOGYXh1Mgz7JN9UxdeeqjX6wgG00YMI3DhGM"></stripe-buy-button>
+                    <stripe-buy-button buy-button-id="buy_btn_1QqKwgIn52oBHUaHhksMjLim" publishable-key="pk_live_51OPRO0In52oBHUaHQYu5fIBTEKUg9s2eQ3mHkzhk7TTqIs1GGshI6X81a6mYwDuOGYXh1Mgz7JN9UxdeeqjX6wgG00YMI3DhGM"></stripe-buy-button>
+                </div>
 
-        <script>
-            document.getElementById('chat-toggle').addEventListener('click', function(event) {
-                event.preventDefault();  // Prevent any default behavior (like form submission)
+                <p class="mt-8 text-lg">
+                    <strong>How Ordering Your Winners Circle Big & Tall Polo Shirt Works</strong><br>
+                    At The Winners Circle, we believe every man deserves the perfect fit. That’s why we offer tailored sizing to ensure your polo shirt is crafted to fit you perfectly.
+                </p>
+                <ul class="mt-4 list-decimal list-inside space-y-2">
+                    <li><strong>Place Your Order</strong> - Select your preferred color and proceed with the purchase.</li>
+                    <li><strong>Submit Your Measurements</strong> - After checkout, you’ll receive an email with a simple measurement guide.</li>
+                    <li><strong>We Tailor Your Polo Shirt</strong> - Our team will craft your custom-fitted Big & Tall polo shirt.</li>
+                    <li><strong>Shipping & Delivery</strong> - Your tailored polo shirt will be packed and shipped to your doorstep.</li>
+                    <li><strong>Wear It with Confidence</strong> - Enjoy a perfect fit. Need adjustments? We’re here to help!</li>
+                </ul>
+            </main>
+        </section> 
         
-                const chatBox = document.getElementById('chat-box');
-        
-                // Toggle the chat window visibility
-                if (chatBox.style.display === "none" || chatBox.style.display === "") {
-                    chatBox.style.display = "block";  // Show the chat box
-                } else {
-                    chatBox.style.display = "none";  // Hide the chat box
+        <section class="services">
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f8f8f8;
+                    margin: 0;
+                    padding: 0; /* Ensure no padding on the body */
                 }
-            });
-        </script>        
+        
+                .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-gap: 20px; /* Space between cards */
+    width: 80%; /* You can adjust the width based on your design */
+    max-width: 1200px; /* Limit the maximum width */
+    padding: 20px; /* Padding inside the container */
+    margin: 20px auto; /* Center the card container */
+}
 
-    </main>
+.card {
+    width: 300px; /* Adjust width to match the image */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+}
+
+
+        
+.card img {
+    width: 100%;
+    height: 200px; /* Adjust height for a uniform look */
+    object-fit: cover; /* Ensures image fits well */
+    border-radius: 5px;
+}
+        
+                .card-content {
+                    padding: 15px;
+                }
+        
+                .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+        
+.card-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+        
+.crypto-fields {
+    margin-top: 10px;
+    font-size: 14px;
+}
+        
+.crypto-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+        
+                .crypto-icon {
+                    font-size: 24px; /* Set consistent size */
+                    color: #555;
+                    padding: 5px;
+                    margin-right: 10px; /* Space between icon and input field */
+                    display: flex;
+                    align-items: center; /* Center icon vertically */
+                }
+        
+                .input-container {
+                    flex-grow: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+        
+                .crypto-input {
+                    width: 100%;
+                    padding: 5px;
+                    border: 1px solid #ccc;
+                    outline: none;
+                    text-align: center;
+                }
+        
+                .copy-icon {
+                    font-size: 18px;
+                    color: #555;
+                    padding: 5px;
+                    display: flex;
+                    align-items: center; /* Center copy icon vertically */
+                    margin-left: 10px; /* Space between input and copy icon */
+                }
+
+            </style>
+        </head>
+        <body>
+            <div class="card-container">
+                <!-- Card 1 -->
+                <div class="card">
+                    <img src="https://the-winners-circle-website.vercel.app/black%20full.png" alt="Product Image" style="width: 100%; max-width: 200px; height: auto;">
+                    <div class="card-content">
+                        <div class="card-title">Made to Measure Black Polo Shirt</div>
+                        <div class="card-price">$100</div>
+                        <div class="crypto-fields">
+                            <div class="crypto-row">
+                                <div class="crypto-icon">Bitcoin</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('btcAddress1', 'Bitcoin')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="btcAddress1" value="3LVDppcTwdbi5hH33q1rXp5UQyXR8YqxpC" class="crypto-input" style="display:none;">
+                            </div>
+                            <div class="crypto-row">
+                                <div class="crypto-icon">ETH</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('ethAddress1', 'Ethereum')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="ethAddress1" value="0x9B59697136fb11f4007e9ddDc6f70811587705e2" class="crypto-input" style="display:none;">
+                            </div>
+                            <div class="crypto-row">
+                                <div class="crypto-icon">Dogecoin</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('dogeAddress1', 'Dogecoin')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="dogeAddress1" value="DT2GZJp2eZzgmTxLJtmTmACdETYCSiNK3m" class="crypto-input" style="display:none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="card">
+                    <img src="https://the-winners-circle-website.vercel.app/green%20full.png" alt="Product Image" style="width: 100%; max-width: 200px; height: auto;">
+                    <div class="card-content">
+                        <div class="card-title">Made to Measure Green Polo Shirt</div>
+                        <div class="card-price">$100</div>
+                        <div class="crypto-fields">
+                            <div class="crypto-row">
+                                <div class="crypto-icon">Bitcoin</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('btcAddress2', 'Bitcoin')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="btcAddress2" value="3LVDppcTwdbi5hH33q1rXp5UQyXR8YqxpD" class="crypto-input" style="display:none;">
+                            </div>
+                            <div class="crypto-row">
+                                <div class="crypto-icon">ETH</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('ethAddress2', 'Ethereum')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="ethAddress2" value="0x9B59697136fb11f4007e9ddDc6f70811587705f" class="crypto-input" style="display:none;">
+                            </div>
+                            <div class="crypto-row">
+                                <div class="crypto-icon">Dogecoin</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('dogeAddress2', 'Dogecoin')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="dogeAddress2" value="DT2GZJp2eZzgmTxLJtmTmACdETYCSiNK4n" class="crypto-input" style="display:none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Card 3 -->
+                <div class="card">
+                    <img src="https://the-winners-circle-website.vercel.app/blue%20full.png" alt="Product Image" style="width: 100%; max-width: 200px; height: auto;">
+                    <div class="card-content">
+                        <div class="card-title">Made to Measure Blue Polo Shirt</div>
+                        <div class="card-price">$100</div>
+                        <div class="crypto-fields">
+                            <div class="crypto-row">
+                                <div class="crypto-icon">Bitcoin</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('btcAddress3', 'Bitcoin')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="btcAddress3" value="3LVDppcTwdbi5hH33q1rXp5UQyXR8YqxpE" class="crypto-input" style="display:none;">
+                            </div>
+                            <div class="crypto-row">
+                                <div class="crypto-icon">ETH</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('ethAddress3', 'Ethereum')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="ethAddress3" value="0x9B59697136fb11f4007e9ddDc6f70811587705g" class="crypto-input" style="display:none;">
+                            </div>
+                            <div class="crypto-row">
+                                <div class="crypto-icon">Dogecoin</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('dogeAddress3', 'Dogecoin')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="dogeAddress3" value="DT2GZJp2eZzgmTxLJtmTmACdETYCSiNK5o" class="crypto-input" style="display:none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Card 4 -->
+                <!-- Duplicate card structure with updated content as needed -->
+                <div class="card">
+                    <img src="https://the-winners-circle-website.vercel.app/red%20full.png" alt="Product Image" style="width: 100%; max-width: 200px; height: auto;"> 
+                    <div class="card-content">
+                        <div class="card-title">Made to Measure Red Polo Shirt</div>
+                        <div class="card-price">$100</div>
+                        <div class="crypto-fields">
+                            <div class="crypto-row">
+                                <div class="crypto-icon">Bitcoin</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('btcAddress3', 'Bitcoin')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="btcAddress3" value="3LVDppcTwdbi5hH33q1rXp5UQyXR8YqxpE" class="crypto-input" style="display:none;">
+                            </div>
+                            <div class="crypto-row">
+                                <div class="crypto-icon">ETH</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('ethAddress3', 'Ethereum')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="ethAddress3" value="0x9B59697136fb11f4007e9ddDc6f70811587705g" class="crypto-input" style="display:none;">
+                            </div>
+                            <div class="crypto-row">
+                                <div class="crypto-icon">Dogecoin</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('dogeAddress3', 'Dogecoin')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="dogeAddress3" value="DT2GZJp2eZzgmTxLJtmTmACdETYCSiNK5o" class="crypto-input" style="display:none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+        
+                <!-- Card 5 -->
+                <!-- Duplicate card structure with updated content as needed -->
+                <div class="card">
+                    <img src="https://the-winners-circle-website.vercel.app/white%20full.png" alt="Product Image" style="width: 100%; max-width: 200px; height: auto;">
+                    <div class="card-content">
+                        <div class="card-title">Made to Measure White Polo Shirt</div>
+                        <div class="card-price">$100</div>
+                        <div class="crypto-fields">
+                            <div class="crypto-row">
+                                <div class="crypto-icon">Bitcoin</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('btcAddress3', 'Bitcoin')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="btcAddress3" value="3LVDppcTwdbi5hH33q1rXp5UQyXR8YqxpE" class="crypto-input" style="display:none;">
+                            </div>
+                            <div class="crypto-row">
+                                <div class="crypto-icon">ETH</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('ethAddress3', 'Ethereum')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="ethAddress3" value="0x9B59697136fb11f4007e9ddDc6f70811587705g" class="crypto-input" style="display:none;">
+                            </div>
+                            <div class="crypto-row">
+                                <div class="crypto-icon">Dogecoin</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('dogeAddress3', 'Dogecoin')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="dogeAddress3" value="DT2GZJp2eZzgmTxLJtmTmACdETYCSiNK5o" class="crypto-input" style="display:none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Card 6 -->
+                <!-- Duplicate card structure with updated content as needed -->
+                <div class="card">
+                    <img src="https://the-winners-circle-website.vercel.app/yellow%20full.png" alt="Product Image" style="width: 100%; max-width: 200px; height: auto;">
+                    <div class="card-content">
+                        <div class="card-title">Made to Measure Yellow Polo Shirt</div>
+                        <div class="card-price">$100</div>
+                        <div class="crypto-fields">
+                            <div class="crypto-row">
+                                <div class="crypto-icon">Bitcoin</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('btcAddress3', 'Bitcoin')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="btcAddress3" value="3LVDppcTwdbi5hH33q1rXp5UQyXR8YqxpE" class="crypto-input" style="display:none;">
+                            </div>
+                            <div class="crypto-row">
+                                <div class="crypto-icon">ETH</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('ethAddress3', 'Ethereum')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="ethAddress3" value="0x9B59697136fb11f4007e9ddDc6f70811587705g" class="crypto-input" style="display:none;">
+                            </div>
+                            <div class="crypto-row">
+                                <div class="crypto-icon">Dogecoin</div>
+                                <div class="clipboard-icon" onclick="copyToClipboard('dogeAddress3', 'Dogecoin')">
+                                    <i class="fa-regular fa-copy"></i>
+                                </div>
+                                <input type="text" id="dogeAddress3" value="DT2GZJp2eZzgmTxLJtmTmACdETYCSiNK5o" class="crypto-input" style="display:none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="contact">
+            <p class="mt-4 text-lg">Got questions? Our support team is always ready to assist!</p>
+
+            <!-- Chat Button - Loads Chat Only When Clicked -->
+            <div class="fixed bottom-5 right-5">
+                <button id="chat-toggle" type="button" class="bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition">
+                    💬 Chat With Us
+                </button>
+                <div id="chat-box" class="hidden border rounded-lg shadow-lg overflow-hidden w-80 h-[500px] mt-2">
+                    <iframe id="chat-iframe" src="https://go.crisp.chat/chat/embed/?website_id=7ae516f6-6c04-4a9f-a0f0-1c0379a2d545"
+                    width="100%" height="100%" style="border: none;">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById('chat-toggle').addEventListener('click', function(event) {
+            event.preventDefault();  // Prevent any default behavior (like form submission)
+    
+            const chatBox = document.getElementById('chat-box');
+    
+            // Toggle the chat window visibility
+            if (chatBox.style.display === "none" || chatBox.style.display === "") {
+                chatBox.style.display = "block";  // Show the chat box
+            } else {
+                chatBox.style.display = "none";  // Hide the chat box
+            }
+        });
+    </script>     
+
+    <script>
+        function copyToClipboard(id, cryptoType) {
+            var copyText = document.getElementById(id);
+            navigator.clipboard.writeText(copyText.value).then(() => {
+                alert(cryptoType + " address copied: " + copyText.value);
+                window.open('https://www.coinbase.com/send', '_blank');
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
 </body>
 </html>
